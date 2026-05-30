@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smith Plumbing Service Area | Phoenix, AZ</title>
+  <meta name="description" content="{{SERVICE_AREA_META_DESCRIPTION}}" />
+  <meta name="theme-color" content="#0F1114" />
+  <link rel="canonical" href="https://ahana-smith-plumbing-llc-2605301623.netlify.app/service-area" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Smith Plumbing Service Area | Phoenix, AZ" />
+  <meta property="og:description" content="{{SERVICE_AREA_META_DESCRIPTION}}" />
+  <meta property="og:url" content="https://ahana-smith-plumbing-llc-2605301623.netlify.app/service-area" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smith Plumbing Service Area | Phoenix, AZ" />
+  <meta name="twitter:description" content="{{SERVICE_AREA_META_DESCRIPTION}}" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&w=1200&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./favicon.svg" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body class="no-js header-brand--image-text">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-pill">
+      <a class="nav-logo" href="/"><img class="logo__img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&w=1200&q=80" alt="Smith Plumbing" width="180" height="54" loading="lazy" decoding="async" /><span class="nav-logo__text nav-logo__text--fallback">Smith<span class="dot">.</span></span><span class="nav-logo__text nav-logo__text--beside">Smith</span></a>
+      <ul class="nav-links" role="list">
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/services">Services</a></li>
+        <li><a class="nav-link" href="/gallery">Gallery</a></li>
+        <li><a class="nav-link" href="/testimonials">{{TESTIMONIALS_PAGE_LABEL|Testimonials}}</a></li>
+        <li><a class="nav-link" href="/about">About</a></li>
+        <li><a class="nav-link" href="/articles">Articles</a></li>
+        <li><a class="nav-link" href="/service-area">{{SERVICE_AREA_PAGE_LABEL|Service Area}}</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost btn-sm" href="/contact">Get a Quote</a>
+        <a class="btn btn-primary btn-sm" href="tel:+16025550142">(602) 555-0142</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Main navigation">
+    <ul class="nav-menu-links" role="list">
+      <li><a class="nav-menu-link" href="/">Home</a></li>
+      <li><a class="nav-menu-link" href="/services">Services</a></li>
+      <li><a class="nav-menu-link" href="/gallery">Gallery</a></li>
+      <li><a class="nav-menu-link" href="/testimonials">{{TESTIMONIALS_PAGE_LABEL|Testimonials}}</a></li>
+      <li><a class="nav-menu-link" href="/about">About</a></li>
+      <li><a class="nav-menu-link" href="/articles">Articles</a></li>
+      <li><a class="nav-menu-link" href="/service-area">{{SERVICE_AREA_PAGE_LABEL|Service Area}}</a></li>
+    </ul>
+    <div class="nav-overlay-footer">
+      <a class="btn btn-primary" href="tel:+16025550142">(602) 555-0142</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <div class="container">
+        <p class="enh-label">{{SERVICE_AREA_PAGE_LABEL|Service Area}}</p>
+        <h1>Serving <span class="accent">{{SERVICE_AREA_SHORT}}</span></h1>
+        <p class="section-sub">{{SERVICE_AREA_INTRO}}</p>
+        <p class="sa-prose">{{SERVICE_AREA_SEO_PARAGRAPH_1|From the city core to the suburbs we mark on the map, homeowners call us for primary trade work they can schedule with confidence. Each pin reflects a community where we answer emergency calls, book inspections, and return for documented repairs—not one-off estimates that never follow through.}}</p>
+        <p class="sa-prose">{{SERVICE_AREA_SEO_PARAGRAPH_2|Whether you need a targeted fix after storm damage or a full replacement with upgraded materials, crews familiar with local codes and weather patterns reduce callbacks. Use the map above to confirm we run trucks in your neighborhood, then follow the service links below for scopes, FAQs, and timelines.}}</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="chips" id="service-area-chips" role="list" aria-label="Communities served"></div>
+        <script type="application/json" id="svc-cities-json">{{SERVICE_CITIES}}</script>
+        <span id="ahana-svc-cities-one-line" hidden aria-hidden="true">{{SERVICE_CITIES_ONE_LINE}}</span>
+        <span id="ahana-city-fallback" hidden aria-hidden="true">Phoenix</span>
+        <noscript>
+          <p class="chips" style="margin-top:1.75rem"><strong>Areas:</strong> {{SERVICE_CITIES_ONE_LINE}}</p>
+        </noscript>
+
+        <div class="map" id="area-map-wrap">
+          <div id="service-area-map" role="img" aria-label="Map centered on Smith Plumbing showing combined service coverage area"></div>
+        </div>
+        <span id="biz-name-for-map" hidden>Smith Plumbing</span>
+
+        <section class="sa-cross" aria-labelledby="sa-cross-h2" data-reveal>
+          <h2 id="sa-cross-h2" class="sa-cross-h2">{{SERVICE_AREA_CROSS_H2|Service coverage tied to the work we perform}}</h2>
+          <p class="sa-cross-intro">{{SERVICE_AREA_CROSS_INTRO|Match your town with the programs we run most often in your metro area. Each page lists FAQs, process steps, and photo-ready examples so you know what we recommend before we arrive.}}</p>
+          <div class="sa-xgrid" data-reveal-stagger>
+            <article class="sa-xcard" data-stagger-item>
+              <h3><a href="/service-1">Repairs</a></h3>
+              <p>{{SERVICE_AREA_CROSS_CARD_1_BODY|Homeowners in our mapped service towns choose this flagship program when wind, hail, or age shows up on inspections—especially where attic ventilation and decking matter. We document findings, explain repair vs replacement, and schedule crews who already know local suppliers.}}</p>
+              <a class="sa-xcard-lm" href="/service-1">View Repairs details</a>
+            </article>
+            <article class="sa-xcard" data-stagger-item>
+              <h3><a href="/service-2">Water Heaters</a></h3>
+              <p>{{SERVICE_AREA_CROSS_CARD_2_BODY|If gutters, flashing, or wall transitions are failing, we scope this line of work with photos you can share with insurance or HOAs. Expect clear pricing bands, realistic timelines, and crews who protect landscaping while we work.}}</p>
+              <a class="sa-xcard-lm" href="/service-2">View Water Heaters details</a>
+            </article>
+            <article class="sa-xcard" data-stagger-item>
+              <h3><a href="/service-3">Drains</a></h3>
+              <p>{{SERVICE_AREA_CROSS_CARD_3_BODY|For long-term performance in local heat and storm cycles, this upgrade path ties materials to code-ready installs. We align underlayment, ridge details, and manufacturer specs so work survives the next inspection cycle.}}</p>
+              <a class="sa-xcard-lm" href="/service-3">View Drains details</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="sa-hub" aria-labelledby="sa-hub-h2" data-reveal>
+          <p class="sa-hub-k">{{SERVICE_AREA_HUB_CTA_KICKER|All services}}</p>
+          <h2 id="sa-hub-h2" class="sa-hub-h2">{{SERVICE_AREA_HUB_CTA_HEADLINE|Compare every option in one place}}</h2>
+          <p class="section-sub">{{SERVICE_AREA_HUB_CTA_BODY|The full services hub stacks priority work, add-ons, and neighborhood-specific notes so you can plan upgrades without guessing. Start there if you are weighing multiple scopes or want a single call to coordinate the next steps.}}</p>
+          <div class="sa-hub-actions">
+            <a class="btn btn-primary" href="/services">{{SERVICE_AREA_HUB_CTA_BUTTON|Open the full services hub}}</a>
+            <a class="btn btn-outline" href="/contact">{{SERVICE_AREA_HUB_CTA_SECONDARY|Request a local estimate}}</a>
+          </div>
+        </section>
+
+        <script type="application/json" id="area-markers-json">{{SERVICE_AREA_MAP_MARKERS_JSON}}</script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+        <script>
+        (function () {
+          var chipHost = document.getElementById('service-area-chips');
+          var rawCities = document.getElementById('svc-cities-json');
+          if (chipHost && rawCities && rawCities.textContent.trim()) {
+            try {
+              var cities = JSON.parse(rawCities.textContent);
+              if (Array.isArray(cities)) {
+                cities.forEach(function (lab) {
+                  if (lab == null || String(lab).trim() === '') return;
+                  var sp = document.createElement('span');
+                  sp.className = 'chip';
+                  sp.setAttribute('role', 'listitem');
+                  sp.textContent = String(lab).trim();
+                  chipHost.appendChild(sp);
+                });
+              }
+            } catch (e) {}
+          }
+          if (chipHost && chipHost.childElementCount === 0) {
+            var oneLineEl = document.getElementById('ahana-svc-cities-one-line');
+            var cityEl = document.getElementById('ahana-city-fallback');
+            var oneLine = oneLineEl ? oneLineEl.textContent.replace(/\s+/g, ' ').trim() : '';
+            var cityFb = cityEl ? cityEl.textContent.replace(/\s+/g, ' ').trim() : '';
+            var tokenBroken = function (s) {
+              return !s || s.indexOf('{{') !== -1;
+            };
+            var text = !tokenBroken(oneLine) ? oneLine : (!tokenBroken(cityFb) ? cityFb : '');
+            if (text) {
+              var fb = document.createElement('p');
+              fb.className = 'chips';
+              fb.style.marginTop = '1.75rem';
+              fb.style.fontWeight = '700';
+              fb.textContent = text;
+              chipHost.parentNode.insertBefore(fb, chipHost.nextSibling);
+            }
+          }
+
+          if (typeof L === 'undefined' || !document.getElementById('service-area-map')) return;
+
+          var lat = parseFloat(String('{{MAP_CENTER_LAT}}').trim());
+          var lng = parseFloat(String('{{MAP_CENTER_LNG}}').trim());
+          if (!isFinite(lat) || !isFinite(lng)) {
+            lat = 39.8283;
+            lng = -98.5795;
+          }
+          var zoom = parseInt('{{MAP_ZOOM|10}}', 10);
+          if (!isFinite(zoom) || zoom < 4 || zoom > 16) zoom = 10;
+
+          var map = L.map('service-area-map', { scrollWheelZoom: false }).setView([lat, lng], zoom);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+
+          var REGION_STYLE = {
+            color: '#c2410c',
+            weight: 2,
+            fillColor: '#f97316',
+            fillOpacity: 0.38
+          };
+
+          function dedupeLatLng(pts) {
+            var out = [];
+            var eps = 0.00012;
+            for (var i = 0; i < pts.length; i++) {
+              var dup = false;
+              for (var j = 0; j < out.length; j++) {
+                if (Math.abs(out[j][0] - pts[i][0]) < eps && Math.abs(out[j][1] - pts[i][1]) < eps) {
+                  dup = true;
+                  break;
+                }
+              }
+              if (!dup) out.push(pts[i]);
+            }
+            return out;
+          }
+
+          function haversineM(a, b) {
+            var R = 6371000;
+            var p1 = (a[0] * Math.PI) / 180;
+            var p2 = (b[0] * Math.PI) / 180;
+            var dp = ((b[0] - a[0]) * Math.PI) / 180;
+            var dl = ((b[1] - a[1]) * Math.PI) / 180;
+            var x = Math.sin(dp / 2) * Math.sin(dp / 2) + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+            return 2 * R * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+          }
+
+          function convexHullLngLat(pointsLngLat) {
+            if (pointsLngLat.length < 3) return pointsLngLat.slice();
+            var pts = pointsLngLat.slice().sort(function (a, b) {
+              return a[0] - b[0] || a[1] - b[1];
+            });
+            function cross(o, a, b) {
+              return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+            }
+            var lower = [];
+            for (var i = 0; i < pts.length; i++) {
+              while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], pts[i]) <= 0) lower.pop();
+              lower.push(pts[i]);
+            }
+            var upper = [];
+            for (var j = pts.length - 1; j >= 0; j--) {
+              while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], pts[j]) <= 0) upper.pop();
+              upper.push(pts[j]);
+            }
+            upper.pop();
+            lower.pop();
+            return lower.concat(upper);
+          }
+
+          function inflateRing(latLngRing, factor) {
+            var clat = 0;
+            var clng = 0;
+            var n = latLngRing.length;
+            for (var ir = 0; ir < n; ir++) {
+              clat += latLngRing[ir][0];
+              clng += latLngRing[ir][1];
+            }
+            clat /= n;
+            clng /= n;
+            var inflated = [];
+            for (var ir2 = 0; ir2 < n; ir2++) {
+              inflated.push([clat + (latLngRing[ir2][0] - clat) * factor, clng + (latLngRing[ir2][1] - clng) * factor]);
+            }
+            return inflated;
+          }
+
+          function circleFromDiameter(a, b, pad) {
+            var mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+            var d = haversineM(a, b);
+            var r = Math.max((d / 2) * pad, 6500);
+            return L.circle(mid, Object.assign({}, REGION_STYLE, { radius: r }));
+          }
+
+          function circleCoveringPoints(pts, pad) {
+            if (pts.length === 1) return L.circle(pts[0], Object.assign({}, REGION_STYLE, { radius: 22000 }));
+            var bestD = -1;
+            var bestA = pts[0];
+            var bestB = pts[1];
+            for (var ia = 0; ia < pts.length; ia++) {
+              for (var jb = ia + 1; jb < pts.length; jb++) {
+                var dist = haversineM(pts[ia], pts[jb]);
+                if (dist > bestD) {
+                  bestD = dist;
+                  bestA = pts[ia];
+                  bestB = pts[jb];
+                }
+              }
+            }
+            return circleFromDiameter(bestA, bestB, pad);
+          }
+
+          function buildUnifiedRegion(map, centerLat, centerLng, markerRecords, bizName) {
+            var pts = [];
+            for (var im = 0; im < markerRecords.length; im++) {
+              pts.push([markerRecords[im].la, markerRecords[im].ln]);
+            }
+            pts.push([centerLat, centerLng]);
+            pts = dedupeLatLng(pts);
+
+            var labels = [];
+            var seenLab = {};
+            for (var il = 0; il < markerRecords.length; il++) {
+              var slab = markerRecords[il].label;
+              if (slab && !seenLab[slab]) {
+                seenLab[slab] = true;
+                labels.push(slab);
+              }
+            }
+
+            var layer;
+            if (pts.length === 1) {
+              layer = L.circle(pts[0], Object.assign({}, REGION_STYLE, { radius: 22000 }));
+            } else if (pts.length === 2) {
+              layer = circleFromDiameter(pts[0], pts[1], 1.38);
+            } else {
+              var hullLngLat = convexHullLngLat(
+                pts.map(function (p) {
+                  return [p[1], p[0]];
+                })
+              );
+              if (hullLngLat.length < 3) {
+                layer = circleCoveringPoints(pts, 1.38);
+              } else {
+                var ring = hullLngLat.map(function (p) {
+                  return [p[1], p[0]];
+                });
+                ring = inflateRing(ring, 1.12);
+                layer = L.polygon(ring, REGION_STYLE);
+              }
+            }
+
+            layer.addTo(map);
+
+            var popupParts = [];
+            if (labels.length) popupParts.push('<strong>Communities we serve</strong><br>' + labels.join(', '));
+            if (bizName) popupParts.push('<strong>Base</strong><br>' + bizName);
+            if (popupParts.length) layer.bindPopup(popupParts.join('<br><br>'));
+
+            map.fitBounds(layer.getBounds().pad(0.18));
+          }
+
+          var markerRecords = [];
+          var rawMarkers = document.getElementById('area-markers-json');
+          if (rawMarkers && rawMarkers.textContent.trim()) {
+            try {
+              var parsed = JSON.parse(rawMarkers.textContent);
+              if (Array.isArray(parsed)) {
+                parsed.forEach(function (m) {
+                  if (!m) return;
+                  var la = Number(m.lat);
+                  var ln = Number(m.lng);
+                  if (!isFinite(la) || !isFinite(ln)) return;
+                  var label = m.label != null ? String(m.label).trim() : '';
+                  markerRecords.push({ la: la, ln: ln, label: label });
+                });
+              }
+            } catch (e2) {}
+          }
+
+          var bizEl = document.getElementById('biz-name-for-map');
+          var bizName = bizEl && bizEl.textContent ? bizEl.textContent.trim() : '';
+
+          if (markerRecords.length) {
+            buildUnifiedRegion(map, lat, lng, markerRecords, bizName);
+          } else {
+            var bizLabel = bizName || 'Our location';
+            var solo = L.circle([lat, lng], Object.assign({}, REGION_STYLE, { radius: 18000 }));
+            solo.addTo(map).bindPopup(bizLabel);
+            map.fitBounds(solo.getBounds().pad(0.18));
+          }
+        })();
+      </script>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Smith<span class="dot">.</span></div>
+        <p class="footer-blurb">Honest plumbing service for Phoenix and the valley since 2012.</p>
+      </div>
+      <div>
+        <div class="footer-col-label">Quick Links</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/testimonials">{{TESTIMONIALS_PAGE_LABEL|Testimonials}}</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/service-area">{{SERVICE_AREA_PAGE_LABEL|Service area}}</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-label">Contact</div>
+        <ul class="footer-links" role="list">
+          <li><a href="tel:+16025550142">(602) 555-0142</a></li>
+          <li><a href="mailto:tom.smith.plumbing.example@gmail.com">tom.smith.plumbing.example@gmail.com</a></li>
+          <li>Mon–Fri 7am–6pm · Sat 8am–2pm · Closed Sun · After-hours leak line on voicemail.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Smith Plumbing</span>
+      <span>Phoenix, AZ · Licensed · bonded · insured</span>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="./main.js" defer></script>
+</body>
+</html>
